@@ -1,0 +1,14 @@
+import wollok.game.*
+import juego.*
+import pantallaInicial.*
+
+program game {
+	
+	game.width(15)
+	game.height(10)
+	game.title("Cornelio")
+	juego.comenzar()
+	
+	game.start()
+
+}
