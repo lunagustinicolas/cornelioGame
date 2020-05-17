@@ -1,14 +1,21 @@
 import wollok.game.*
 import juego.*
 import pantallaInicial.*
+import Nivel.*
+import cornelio.*
+import disparo.*
+import Enemigos.*
 
 program game {
 	
 	game.width(15)
 	game.height(10)
 	game.title("Cornelio")
+	game.boardGround(juego.nivel().image())
 	juego.comenzar()
+	//TODO: eliminar todo lo que sigue a esto
 	
+	keyboard.f().onPressDo{cornelio.disparar()}
 	game.start()
 
 }
