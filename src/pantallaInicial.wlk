@@ -6,11 +6,11 @@ object pantallainicial {
 	method image() = return "Untitled.png"
 	method cargar(){
 		
-		
+		game.boardGround(self.image())
 		keyboard.enter().onPressDo{
 			
 			game.clear()
-			juego.nivel(levelOne)
+			juego.actualizarNivel(levelOne)
 			
 			juego.cargarNivel()
 			

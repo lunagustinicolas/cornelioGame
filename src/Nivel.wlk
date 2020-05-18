@@ -4,6 +4,7 @@ import cornelio.*
 import Enemigos.*
 import juego.*
 import disparo.*
+
 class Nivel {
 
 	var enemigos1 = []
@@ -26,7 +27,7 @@ class Nivel {
 	method todosLosEnemigos() = return enemigos1 + enemigos2 + enemigos3
 
 	method cargar() {
-		//game.boardGround(self.image())
+		//game.boardGround(image)
 		game.addVisual(cornelio)
 	    self.cargarEnemigos()
 	}

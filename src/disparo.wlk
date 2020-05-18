@@ -9,15 +9,17 @@ class Disparo {
 			self.position(self.position().left(1))	
 	}
 	method validarDisparo(){
-		if(self.position().x() == 0 ){
-			self.fueraDeEscena()	
+		if(self.position().x() <= 1 ){
+			return true
+				
 		}
 	}
 	
 	method fueraDeEscena(){
-		game.removeVisual(self)
+		//game.removeVisual(self)
+		
 	}
-	method impactar()	
+		
 	
 }
 
@@ -26,11 +28,7 @@ class DisparoEnemigo inherits Disparo{
 	override method image(){
 		return "popcorn.png"
 	}
-	override method impactar(){
-		if(game.uniqueCollider(cornelio)){
-			
-		}
-	}	
+	
 }
 
 class DisparoCornelio inherits Disparo{
@@ -41,16 +39,14 @@ class DisparoCornelio inherits Disparo{
 		self.position(self.position().right(1))
 	}
 	
-	override method impactar(){}
+	
 	
 	override method validarDisparo(){
-		if(self.position().x() == 14 ){
+		if(self.position().x() >= 14 ){
 			self.fueraDeEscena()	
 		}
 	}
 	
-	override method fueraDeEscena(){
-		game.removeVisual(self)
-	}
+
 	
 }
