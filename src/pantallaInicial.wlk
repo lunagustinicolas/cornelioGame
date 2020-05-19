@@ -4,7 +4,7 @@ import wollok.game.*
 
 object pantallaInicial {
 
-	method image() = "nivel1-fondo.png"
+	method image() = "Untitled.png"
 
 	method cargar() {
 		

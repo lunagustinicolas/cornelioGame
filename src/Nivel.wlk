@@ -9,7 +9,9 @@ class Nivel
 	var enemigos1 = []
 	var enemigos2 = []
 	var enemigos3 = []
+	var property position = game.at(0,0)
 	method image() = ""
+
 	method todosLosEnemigos() =  enemigos1 + enemigos2 + enemigos3
 	
 	method cargarEnemigos()
@@ -19,6 +21,7 @@ class Nivel
 		}
 	}	
 	method cargar(){
+		game.addVisual(self)
 		game.addVisual(cornelio)
 		self.cargarEnemigos()
 		//TODO: agregar power ups?, palanca?, items de ayuda?
