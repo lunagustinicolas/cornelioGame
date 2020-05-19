@@ -1,40 +1,35 @@
-import wollok.game.*
 import disparo.*
+import wollok.game.*
+import Nivel.*
+import juego.*
 
-class Enemigos {
-
+class Enemigo
+{
+	var property vitalidad = 0
+	var property disparo = 0
 	var property image = "obrerosyroundup.png"
-	var property position = new Position(x = 0, y = 1)
-	var property disparo = null
-
-	method disparar() {
-		if (disparo == null) {
+	var property position 
+	method disparar()
+	{
+		if (disparo == 0){
 			disparo = new DisparoEnemigo(position = self.position())
-			game.addVisual(disparo)
-			disparo.moverDisparo()
-		} else {
-			if (game.hasVisual(disparo)) {
-				disparo.moverDisparo()
-			}
-		}
-	}
-
-	method moverDisparo() {
-		if (disparo != null) {
+			disparo.aparecer()
 			disparo.moverDisparo()
 		}
 	}
-
-	method validarDisparo() {
-		if (disparo != null) {
-			if (game.hasVisual(disparo)) {
-				if(disparo.validarDisparo()){
-					game.removeVisual(disparo)
-					self.disparo(null)
-				}
-			}
+	
+	method caminar()
+	{	
+		//TODO: arreglar las validaciones
+		self.position(self.position().left(1))	
+	}
+	
+	method moverDisparo()
+	{
+		if(disparo != 0)
+		{
+			disparo.moverDisparo()
 		}
 	}
-
+	
 }
-

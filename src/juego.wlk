@@ -1,17 +1,15 @@
 import wollok.game.*
-import pantallaInicial.*
 import Nivel.*
+import pantallaInicial.*
 
-object juego {
-	var property nivel = pantallainicial
-		
-	method comenzar(){
+object juego
+{
+	var property nivel = pantallaInicial 
+	
+	method cargar(){
 		nivel.cargar()
 	}
-	method actualizarNivel(level){
-		nivel = level
-	}
-	method cargarNivel(){
-		nivel.cargar()
-	}	
+	method cambiarNivel(_nuevoNivel){
+		nivel = _nuevoNivel
+	}	 
 }
