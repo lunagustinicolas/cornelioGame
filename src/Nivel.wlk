@@ -19,10 +19,11 @@ class Nivel
 		self.todosLosEnemigos().forEach{enemigo => game.addVisual(enemigo)
 			
 		}
-	}	
+	}		
 	method cargar(){
 		game.addVisual(self)
-		game.addVisual(cornelio)
+		game.addVisualCharacter(cornelio)
+		game.showAttributes(cornelio)
 		self.cargarEnemigos()
 		//TODO: agregar power ups?, palanca?, items de ayuda?
 		self.cargarCondiciones()
@@ -54,9 +55,11 @@ object nivelUno inherits Nivel
 			game.onTick(2000,"caminar",{enemigo.caminar()})
 			game.onTick(1000, "disparar",{enemigo.disparar()})
 			game.onTick(300, "moverDisparo",{enemigo.moverDisparo()})
-			
+				
 		}
-			
+		
+
+		game.onCollideDo(cornelio,{objeto => cornelio.colisionaCon(objeto)})	
 	}
 
 	
